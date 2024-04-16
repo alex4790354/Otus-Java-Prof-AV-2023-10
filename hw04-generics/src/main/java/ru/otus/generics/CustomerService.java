@@ -2,12 +2,13 @@ package ru.otus.generics;
 
 import java.util.Comparator;
 import java.util.Map;
+import java.util.NavigableMap;
 import java.util.TreeMap;
 
 
 public class CustomerService {
 
-    TreeMap<Customer, String> sortedCustomers;
+    private final NavigableMap<Customer, String> sortedCustomers;
 
     public CustomerService() {
         this.sortedCustomers = new TreeMap<>(Comparator.comparingLong(Customer::getScores));
