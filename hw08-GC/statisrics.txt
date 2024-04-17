@@ -1,0 +1,32 @@
+Статистика со сборщиком - G1
+
+- Xms2048m Xmx2048m
+    spend msec:8092, sec:8
+    spend msec:7767, sec:7
+    spend msec:8085, sec:8
+
+- Xms1792m Xmx1792m
+
+- Xms1536m Xmx1536m
+    spend msec:8146, sec:8
+    spend msec:8156, sec:8
+    spend msec:7748, sec:7
+
+- Xms1280m Xmx1280m
+
+- Xms1080m Xmx1080m
+    spend msec:7611, sec:7
+    spend msec:7964, sec:7
+    spend msec:7718, sec:7
+
+- Xms768m Xmx768m
+
+- Xms512m Xmx512m
+    spend msec:8154, sec:8
+    spend msec:7718, sec:7
+    spend msec:7562, sec:7
+
+- Xms256m Xmx256m
+    spend msec:8130, sec:8
+    spend msec:8204, sec:8
+    spend msec:8166, sec:8
