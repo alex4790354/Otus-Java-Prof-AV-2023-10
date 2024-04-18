@@ -52,11 +52,12 @@ public class DummyService {
             try {
                 executeListMethods(beforeEachMethods, testObject);
                 testMethod.invoke(testObject);
-                executeListMethods(afterEachMethods, testObject);
                 result.put(testMethod.getName(), "SUCCESS");
             } catch (Exception e) {
                 result.put(testMethod.getName(), "FAILED");
                 logger.error("##executeTestMethods: Exception happened in method '{}'", testMethod.getName());
+            } finally {
+                executeListMethods(afterEachMethods, testObject);
             }
         }
         return result;
