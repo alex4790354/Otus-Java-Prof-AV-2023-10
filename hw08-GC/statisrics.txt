@@ -1,32 +1,75 @@
-Статистика со сборщиком - G1
+Статистика со сборщиком - G1GC, ParallelGC
 
+    -XX:+UseG1GC                            -XX:+UseParallelGC                              -XX:+UseSerialGC
+    [после оптимизации]                     [после оптимизации]
+- Xms20480m Xm20480xm
+    spend msec:9007, sec:9                  spend msec:4394, sec:4                          spend msec:4696, sec:4
+    spend msec:9008, sec:9
+    spend msec:8920, sec:8
+   [spend msec:2144, sec:2]                [spend msec:2115, sec:2]
+- Xms15360m Xm15360xm
+                                            spend msec:4382, sec:4
+- Xms15360m Xm15360xm
+                                            spend msec:4185, sec:4
+- Xms10240m Xm10240xm
+    spend msec:9733, sec:9                  spend msec:4142, sec:4                          spend msec:4570, sec:4
+- Xms6144m Xmx6144m
+                                            spend msec:4648, sec:4                          spend msec:5636, sec:5
+                                           [spend msec:1602, sec:1]
+- Xms5888m Xmx5888m
+                                            spend msec:4808, sec:4
+- Xms5632m Xmx5632m
+                                            spend msec:5927, sec:5
+- Xms5376m Xmx5376m
+                                            spend msec:5627, sec:5
+- Xms5120m Xmx5120m
+    spend msec:9055, sec:9                  spend msec:6088, sec:6                          spend msec:6024, sec:6
+                                           [spend msec:1571, sec:1]
+- Xms4864m Xmx4864m
+                                            spend msec:6189, sec:6
+- Xms4608m Xmx4608m
+                                            spend msec:6295, sec:6
+- Xms4096m Xmx4352m
+                                            spend msec:6999, sec:6
+- Xms4096m Xmx4096m
+    spend msec:9345, sec:9                  spend msec:8391, sec:8                          spend msec:7313, sec:7
+                                           [spend msec:1587, sec:1]
+- Xms3584m Xmx3584m
+                                            spend msec:9428, sec:9
+- Xms3072m Xmx3072m
+                                            spend msec:11127, sec:11
+                                           [spend msec:1806, sec:1]
+- Xms2560m Xmx2560m
+                                            spend msec:12978, sec:12
 - Xms2048m Xmx2048m
-    spend msec:8092, sec:8
-    spend msec:7767, sec:7
-    spend msec:8085, sec:8
-
+    spend msec:9341, sec:9                  spend msec:17004, sec:17
+    spend msec:9311, sec:9                  spend msec:17495, sec:17
+    spend msec:9256, sec:9                  spend msec:16849, sec:16
 - Xms1792m Xmx1792m
-
+    spend msec:9427, sec:9                  spend msec:17967, sec:17
+    spend msec:9321, sec:9
+    spend msec:9293, sec:9
 - Xms1536m Xmx1536m
-    spend msec:8146, sec:8
-    spend msec:8156, sec:8
-    spend msec:7748, sec:7
-
+    spend msec:9341, sec:9                  spend msec:19894, sec:19
+    spend msec:9299, sec:9
+    spend msec:9294, sec:9
 - Xms1280m Xmx1280m
-
-- Xms1080m Xmx1080m
-    spend msec:7611, sec:7
-    spend msec:7964, sec:7
-    spend msec:7718, sec:7
-
+        spend msec:9407, sec:9              spend msec:21633, sec:21
+    spend msec:9307, sec:9
+    spend msec:9246, sec:9
+- Xms1080m Xmx1024m
+    spend msec:10175, sec:10                spend msec:24272, sec:24
+    spend msec:10115, sec:10                spend msec:23529, sec:23
+    spend msec:10105, sec:10                spend msec:22761, sec:22
 - Xms768m Xmx768m
-
+    spend msec:10242, sec:10
+    spend msec:10128, sec:10
+    spend msec:10098, sec:10
 - Xms512m Xmx512m
-    spend msec:8154, sec:8
-    spend msec:7718, sec:7
-    spend msec:7562, sec:7
-
+    spend msec:10701, sec:10                spend msec:32658, sec:32
+    spend msec:10527, sec:10
+    spend msec:10200, sec:10
 - Xms256m Xmx256m
-    spend msec:8130, sec:8
-    spend msec:8204, sec:8
-    spend msec:8166, sec:8
+    spend msec:9926, sec:9                  spend msec:32989, sec:32
+    spend msec:9720, sec:9
+    spend msec:9523, sec:9

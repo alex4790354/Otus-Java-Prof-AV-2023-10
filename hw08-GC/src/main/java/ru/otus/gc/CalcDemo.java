@@ -5,7 +5,7 @@ package ru.otus.gc;
 -Xmx256m
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:HeapDumpPath=./logs/heapdump.hprof
--XX:+UseG1GC
+-XX:+UseG1GC or -XX:+UseParallelGC
 -Xlog:gc=debug:file=./hw08-GC/logs/gc-%p-%t.log:tags,uptime,time,level:filecount=5,filesize=10m
 */
 
