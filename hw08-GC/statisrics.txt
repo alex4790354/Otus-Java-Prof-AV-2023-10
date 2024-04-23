@@ -1,7 +1,7 @@
 Статистика со сборщиком - G1GC, ParallelGC
 
     -XX:+UseG1GC                            -XX:+UseParallelGC                              -XX:+UseSerialGC
-    [после оптимизации]                     [после оптимизации]
+    [after optimization]                    [after optimization]
 - Xms20480m Xm20480xm
     spend msec:9007, sec:9                  spend msec:4394, sec:4                          spend msec:4696, sec:4
     spend msec:9008, sec:9
@@ -54,7 +54,7 @@
     spend msec:9299, sec:9
     spend msec:9294, sec:9
 - Xms1280m Xmx1280m
-        spend msec:9407, sec:9              spend msec:21633, sec:21
+    spend msec:9407, sec:9                  spend msec:21633, sec:21
     spend msec:9307, sec:9
     spend msec:9246, sec:9
 - Xms1080m Xmx1024m
