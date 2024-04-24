@@ -6,6 +6,16 @@ include("hw06-annotations")
 include("hw08-GC")
 include("hw10-aop")
 include("hw12-solid")
+include("hw15-patterns")
+include("hw16-io")
+include("hw18-jdbc")
+include("hw21-cache")
+include("hw22-jpql")
+include("hw24-webServer")
+include("hw25-di")
+include("hw28-springDataJdbc")
+include("hw31-executors")
+include("hw32-concurrentCollections")
 
 pluginManagement {
     val jgitver: String by settings
