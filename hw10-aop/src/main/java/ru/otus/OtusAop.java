@@ -4,8 +4,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.otus.annotation.OtusLog;
@@ -24,25 +24,40 @@ public class OtusAop {
 
     static class DemoInvocationHandler implements InvocationHandler {
         private final LogTestInterface testLogging;
-        private final Map<Method, Boolean> methodCache;
+        private final Set<String> methodsRequiringLogs;
 
         DemoInvocationHandler(LogTestInterface testLogging) {
             this.testLogging = testLogging;
-            this.methodCache = new HashMap<>();
+            this.methodsRequiringLogs = new HashSet<>();
 
+            // Populate the set with method signatures requiring logging
             for (Method method : testLogging.getClass().getMethods()) {
-                methodCache.put(method, method.isAnnotationPresent(OtusLog.class));
+                if (method.isAnnotationPresent(OtusLog.class)) {
+                    String signature = methodSignature(method);
+                    methodsRequiringLogs.add(signature);
+                }
             }
         }
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            Method realMethod = testLogging.getClass().getMethod(method.getName(), method.getParameterTypes());
-            Boolean requiresLogging = methodCache.get(realMethod);
-            if (requiresLogging != null && requiresLogging) {
+            // Create a signature for the current method call
+            String signature = methodSignature(method);
+
+            // Check if this method signature is in the set of methods requiring logs
+            if (methodsRequiringLogs.contains(signature)) {
                 logger.info("Proxy for method: '{}', param: '{}'", method.getName(), Arrays.toString(args));
             }
             return method.invoke(testLogging, args);
+        }
+
+        // Helper method to create a unique signature for a method
+        private String methodSignature(Method method) {
+            String paramTypes = Arrays.stream(method.getParameterTypes())
+                    .map(Class::getTypeName)
+                    .reduce((a, b) -> a + "," + b)
+                    .orElse("");
+            return method.getName() + "(" + paramTypes + ")";
         }
     }
 }
