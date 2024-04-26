@@ -4,14 +4,14 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.List;
 
-/** "Разбирает" объект на составные части */
+/** "Disassembles" an object into its component parts */
 public interface EntityClassMetaData<T> {
     String getName();
 
     Constructor<T> getConstructor();
 
-    // Поле Id должно определять по наличию аннотации Id
-    // Аннотацию @Id надо сделать самостоятельно
+    // The Id field must be determined by the presence of the Id annotation
+    // The @Id annotation must be done independently
     Field getIdField();
 
     List<Field> getAllFields();

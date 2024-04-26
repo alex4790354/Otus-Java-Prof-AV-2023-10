@@ -1,6 +1,6 @@
 package ru.otus.jdbc.mapper;
 
-/** Создает SQL - запросы */
+/** Creates SQL queries */
 public interface EntitySQLMetaData {
     String getSelectAllSql();
 
