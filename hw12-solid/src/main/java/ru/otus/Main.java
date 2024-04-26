@@ -1,24 +1,30 @@
 package ru.otus;
 
-import ru.otus.service.AtmImpl;
-import ru.otus.model.Banknote;
+import ru.otus.model.BanknotesNominal;
 import ru.otus.model.BanknoteSet;
-
+import ru.otus.service.AtmImplTransactional;
 import java.util.List;
+import java.util.Map;
+
 
 public class Main {
     public static void main(String[] args) {
-        AtmImpl atm = new AtmImpl();
-        atm.depositCash(Banknote.BANKNOTE_50, 10);
-        atm.depositCash(Banknote.BANKNOTE_100, 10);
-        atm.depositCash(Banknote.BANKNOTE_500, 10);
-        atm.depositCash(Banknote.BANKNOTE_1000, 10);
-        atm.depositCash(Banknote.BANKNOTE_2000, 10);
-        atm.depositCash(Banknote.BANKNOTE_5000, 10);
+        AtmImplTransactional atm = new AtmImplTransactional();
+        atm.depositCash(BanknotesNominal.BANKNOTE_50, 10);
+        atm.depositCash(BanknotesNominal.BANKNOTE_100, 10);
+        atm.depositCash(BanknotesNominal.BANKNOTE_500, 10);
+        atm.depositCash(BanknotesNominal.BANKNOTE_1000, 10);
+        atm.depositCash(BanknotesNominal.BANKNOTE_2000, 10);
+        atm.depositCash(BanknotesNominal.BANKNOTE_5000, 10);
 
-        List<BanknoteSet> cash = atm.withdrawCash(13650);
+        List<BanknoteSet> cash = atm.withdrawCash(13_650_000);
         for (BanknoteSet set : cash) {
             System.out.println(set.getBanknote() + ", " + set.getAmount());
+        }
+
+        Map<BanknotesNominal, Integer> cashBox = atm.getCashBox();
+        for (Map.Entry<BanknotesNominal, Integer> entry : cashBox.entrySet()) {
+            System.out.println(entry.getValue());
         }
     }
 }

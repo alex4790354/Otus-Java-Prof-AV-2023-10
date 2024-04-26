@@ -1,4 +1,7 @@
 dependencies {
+    implementation("org.springframework:spring-context")
+    implementation("org.springframework:spring-tx") // Transaction management
+
     implementation ("ch.qos.logback:logback-classic")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")

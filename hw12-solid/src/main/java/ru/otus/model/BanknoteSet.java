@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class BanknoteSet {
-    private final Banknote banknote;
+    private final BanknotesNominal banknote;
     private final int amount;
 }
