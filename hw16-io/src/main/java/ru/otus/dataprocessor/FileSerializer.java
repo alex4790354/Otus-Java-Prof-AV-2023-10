@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
-import java.util.TreeMap;
+
 
 public class FileSerializer implements Serializer {
 
@@ -19,9 +19,9 @@ public class FileSerializer implements Serializer {
 
     @Override
     public void serialize(Map<String, Double> data) throws IOException {
-        Map<String, Double> sortedMap = new TreeMap<>(data);
+        //Map<String, Double> sortedMap = new TreeMap<>(data);
         Gson gson = new Gson();
-        String jsonString = gson.toJson(sortedMap);
+        String jsonString = gson.toJson(data);
         try (BufferedWriter writer = Files.newBufferedWriter(Path.of(fileName), StandardCharsets.UTF_8)) {
             writer.append(jsonString);
             writer.flush();
