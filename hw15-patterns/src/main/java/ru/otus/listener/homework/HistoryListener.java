@@ -14,8 +14,18 @@ public class HistoryListener implements Listener, HistoryReader {
 
     @Override
     public void onUpdated(Message msg) {
-        // Сохраняем глубокую копию сообщения, чтобы изменения в оригинале не затронули сохранённую копию
-        Message copy = new Message.Builder(msg.getId())
+        // We save a deep copy of the message so that changes in the original do not affect the saved copy
+        Message copy = copy(msg);
+        history.put(msg.getId(), copy);
+    }
+
+    @Override
+    public Optional<Message> findMessageById(long id) {
+        return Optional.ofNullable(history.get(id));
+    }
+
+    private Message copy(Message msg) {
+        return new Message.Builder(msg.getId())
                 .field1(msg.getField1())
                 .field2(msg.getField2())
                 .field3(msg.getField3())
@@ -30,11 +40,5 @@ public class HistoryListener implements Listener, HistoryReader {
                 .field12(msg.getField12())
                 .field13(new ObjectForMessage(new ArrayList<>(msg.getField13().getData())))
                 .build();
-        history.put(msg.getId(), copy);
-    }
-
-    @Override
-    public Optional<Message> findMessageById(long id) {
-        return Optional.ofNullable(history.get(id));
     }
 }

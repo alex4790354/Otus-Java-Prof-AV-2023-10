@@ -20,7 +20,7 @@ public class ObjectForMessage {
     }
 
     public ObjectForMessage(List<String> data) {
-        this.data = new ArrayList<>(data); // Создание копии списка для гарантии глубокого копирования
+        this.data = new ArrayList<>(data); // Making a copy of the list to ensure deep copying
     }
 
     public static ObjectForMessage deepCopy(ObjectForMessage src) {
