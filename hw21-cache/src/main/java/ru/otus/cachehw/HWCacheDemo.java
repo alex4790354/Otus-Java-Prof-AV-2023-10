@@ -13,7 +13,7 @@ public class HWCacheDemo {
     private void demo() {
         HwCache<String, Integer> cache = new MyCache<>();
 
-        // пример, когда Idea предлагает упростить код, при этом может появиться "спец"-эффект
+        // an example when Idea suggests simplifying the code, which may result in a “special” effect
         @SuppressWarnings("java:S1604")
         HwListener<String, Integer> listener = new HwListener<String, Integer>() {
             @Override
