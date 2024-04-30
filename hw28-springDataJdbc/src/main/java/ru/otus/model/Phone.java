@@ -9,12 +9,12 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "client")
-public class Manager {
+@Table(name = "phone")
+public class Phone {
 
     @Id
-    private Long no;
-    private String label;
-    private String param1;
+    private Long id;
+    private String number;
+    private Long clientId;
 
 }
