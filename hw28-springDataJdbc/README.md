@@ -1,11 +1,5 @@
 # hw28-springDataJdbc
 
-
-Implemented only clientsList.html 
-
-
-# ######################################################################## #
-
 Learn how to create CRUD applications in Spring Boot (or at least Select):
 - Take as a basis the worksheet for the webinar Lesson “Web server. DZ", but without a login page;
 - Use Spring Boot instead of Jetty;
