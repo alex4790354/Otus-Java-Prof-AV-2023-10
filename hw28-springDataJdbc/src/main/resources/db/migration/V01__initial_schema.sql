@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS client
 (
-    id bigint,
+    id bigserial,
     name varchar(255),
     CONSTRAINT client_pk PRIMARY KEY (id)
 );

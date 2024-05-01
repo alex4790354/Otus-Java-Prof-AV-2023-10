@@ -42,4 +42,9 @@ public class ClientServiceImpl implements ClientService {
         log.info("##42 - ClientService.save(). client = " + client);
         return Optional.ofNullable(clientRepository.save(client));
     }
+
+    @Override
+    public void delete(Client client) {
+        clientRepository.delete(client);
+    }
 }

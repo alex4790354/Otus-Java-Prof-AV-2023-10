@@ -14,4 +14,7 @@ public interface ClientService {
     Optional<Client> findByName(String name);
 
     Optional<Client> save(Client client);
+
+    void delete(Client client);
+
 }

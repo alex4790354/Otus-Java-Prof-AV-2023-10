@@ -25,4 +25,6 @@ public interface ClientRepository extends ListCrudRepository<Client, Long> {
     @Modifying
     @Query("update client set name = :newName where id = :id")
     void updateName(@Param("id") long id, @Param("newName") String newName);
+
+    void delete(Client client);
 }
