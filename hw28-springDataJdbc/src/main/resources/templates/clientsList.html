@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all clients</title>
+
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        .clients, .clients td {
+            border: 1px solid lightgray;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: block;
+        }
+
+        input {
+            width: 150px;
+        }
+
+
+        select {
+            width: 154px;
+        }
+
+        button {
+            width: 250px;
+        }
+
+        .controls-container {
+            margin-bottom: 5px;
+        }
+
+        .single-button-container {
+            margin-left: 158px;
+        }
+
+        h3 {
+            background-repeat: no-repeat;
+            padding: 2px;
+            padding-left: 30px;
+        }
+    </style>
+
+    <style type="text/css" th:inline="text">
+        [[h3]] {
+            background-image: url([[@{/book.png}]]);
+            background-repeat: no-repeat;
+            padding: 2px;
+            padding-left: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<h3>Clients:</h3><br/>
+
+<div>
+    <a href="/client/create">Create New Client</a>
+</div>
+
+<table class="clients">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="client : ${clients}">
+        <td th:text="${client.id}">1</td>
+        <td th:text="${client.name}">John Smith</td>
+        <td>
+            <a th:href="@{/client/update/{id}(id=${client.id})}">Update</a>
+        </td>
+        <td>
+            <a th:href="@{/client/delete/{id}(id=${client.id})}" onclick="return confirm('Are you sure?');">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Create New Client</h3>
+<!-- Client creation form -->
+<form th:action="@{/client/create}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Create</button></td>
+            <td><a href="/client/list">Cancel</a></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
