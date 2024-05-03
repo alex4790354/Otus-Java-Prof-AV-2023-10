@@ -6,14 +6,12 @@ import lombok.*;
 
 
 @Getter
-@Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "client")
 public class Client {
 
     @Id
-    private Long id;
-    private String name;
+    private final Long id;
+    private final String name;
 
 }

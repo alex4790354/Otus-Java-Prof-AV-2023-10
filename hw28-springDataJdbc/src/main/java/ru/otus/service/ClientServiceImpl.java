@@ -27,19 +27,19 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Optional<Client> findById(long id) {
-        log.info("##30 - ClientService.findById() with id = " + id);
+        log.info("##30 - ClientService.findById() with id = {}", id);
         return clientRepository.findById(id);
     }
 
     @Override
     public Optional<Client> findByName(String name) {
-        log.info("##36 - ClientService.findByName(). name = " + name);
+        log.info("##36 - ClientService.findByName(). name = {}", name);
         return clientRepository.findByName(name);
     }
 
     @Override
     public Optional<Client> save(Client client) {
-        log.info("##42 - ClientService.save(). client = " + client);
+        log.info("##42 - ClientService.save(). client = {}", client);
         return Optional.ofNullable(clientRepository.save(client));
     }
 
