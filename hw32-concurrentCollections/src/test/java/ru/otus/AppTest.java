@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -27,7 +26,7 @@ import static org.mockito.Mockito.*;
 
 class AppTest {
     private static final String ALL_ROOMS_BINDING = "*";
-    private static final String ROOM_NAME_BINDING = "Комната: 4";
+    private static final String ROOM_NAME_BINDING = "Room: 4";
     private static final int SENSORS_COUNT = 4;
     private static final int SENSORS_DATA_QUEUE_CAPACITY = 1000;
     public static final int BINDED_ROOM_NUMBER = 4;

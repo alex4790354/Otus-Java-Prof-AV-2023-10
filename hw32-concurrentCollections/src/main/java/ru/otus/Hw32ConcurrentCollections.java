@@ -15,7 +15,7 @@ import ru.otus.services.processors.SensorDataProcessorRoom;
 public class Hw32ConcurrentCollections {
 
     private static final String ALL_ROOMS_BINDING = "*";
-    private static final String ROOM_NAME_BINDING = "Комната: 4";
+    private static final String ROOM_NAME_BINDING = "Room: 4";
     private static final int BUFFER_SIZE = 15;
     private static final int SENSORS_COUNT = 4;
 
