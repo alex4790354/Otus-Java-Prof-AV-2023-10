@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Client</title>
+</head>
+<body>
+<h1>Update Client</h1>
+<!-- Client update form -->
+<form th:action="@{/client/update}" th:object="${client}" method="post">
+    <table>
+        <tr>
+            <td>ID:</td>
+            <!-- The 'th:field' automatically populates the value and names the field based on the object properties -->
+            <td><input type="text" th:field="*{id}" readonly /></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}" /></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Update</button></td>
+            <td><a href="/client/list">Cancel</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

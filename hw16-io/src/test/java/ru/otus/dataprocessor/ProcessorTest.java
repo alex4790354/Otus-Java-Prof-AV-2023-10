@@ -1,7 +1,6 @@
 package ru.otus.dataprocessor;
 
 import org.assertj.core.api.AssertionsForClassTypes;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -15,11 +14,8 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 class ProcessorTest {
 
-    // We need to implement the class methods and make sure that the test passes. The test itself cannot be changed
-    // Надо реализовать методы классов и убедиться, что тест проходит. Cам тест менять нельзя
-
+    // The test "cannot be changed"
     @Test
-    @Disabled("For the build to pass") // Эту аннотацию надо убрать
     @DisplayName("Json is read from the file, processed, the result is serialized into a string")
     void processingTest(@TempDir Path tempDir) throws IOException {
         System.out.println(tempDir);
@@ -44,7 +40,6 @@ class ProcessorTest {
 
         var serializedOutput = Files.readString(Paths.get(fullOutputFilePath));
         // Please note: the order of the keys is important
-        // обратите внимание: важен порядок ключей
         AssertionsForClassTypes.assertThat(serializedOutput).isEqualTo("{\"val1\":3.0,\"val2\":30.0,\"val3\":33.0}");
     }
 }

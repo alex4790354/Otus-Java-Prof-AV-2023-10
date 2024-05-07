@@ -1,7 +1,6 @@
 package ru.otus.model;
 
-// Let's say this class is a library class, it cannot be changed
-// Допустим, этот класс библиотечный, его нельзя менять
+// Let's say this class is a library class... => cannot be changed
 public record Measurement(String name, double value) {
 
     @Override
