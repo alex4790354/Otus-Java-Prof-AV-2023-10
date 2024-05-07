@@ -1,5 +1,11 @@
 package ru.otus.homework;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
+import java.lang.reflect.Field;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -10,20 +16,11 @@ import org.hibernate.engine.jdbc.spi.JdbcServices;
 import org.hibernate.engine.jdbc.spi.SqlStatementLogger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.otus.crm.model.Address;
 import ru.otus.crm.model.Client;
 import ru.otus.crm.model.Phone;
 
-import java.lang.reflect.Field;
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatCode;
 
 class HomeworkTest {
 
@@ -43,7 +40,6 @@ class HomeworkTest {
         sessionFactory.close();
     }
 
-    @Disabled("Delete after development")
     @Test
     void testHomeworkRequirementsForTablesCount() {
 
@@ -53,7 +49,6 @@ class HomeworkTest {
         assertThat(tables).hasSize(3);
     }
 
-    @Disabled("Delete after development")
     @Test
     void testHomeworkRequirementsForUpdatesCount() {
         applyCustomSqlStatementLogger(new SqlStatementLogger(true, false, false, 0) {
@@ -81,7 +76,6 @@ class HomeworkTest {
         }
     }
 
-    @Disabled("Delete after development")
     @Test
     void testForHomeworkRequirementsForClientReferences() throws Exception {
         var client = new Client(
@@ -92,7 +86,6 @@ class HomeworkTest {
         assertThatClientHasCorrectReferences(client);
     }
 
-    @Disabled("Delete after development")
     @Test
     void testForHomeworkRequirementsForClonedClientReferences() throws Exception {
         var client = new Client(

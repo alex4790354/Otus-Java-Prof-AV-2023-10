@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Optional;
 import org.hibernate.Session;
 
+
 public class DataTemplateHibernate<T> implements DataTemplate<T> {
 
     private final Class<T> clazz;
-
     public DataTemplateHibernate(Class<T> clazz) {
         this.clazz = clazz;
     }
